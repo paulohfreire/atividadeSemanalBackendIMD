@@ -3,8 +3,9 @@ module.exports = {
   properties: {
     nome: { type: "string" },
     descricao: { type: "string" },
-    preco: { type: "number" }
+    preco: { type: "number" },
+    tag: { type: "string" }
   },
   required: ["nome", "preco"],
-  additionalProperties: false
+  additionalProperties: true
 }

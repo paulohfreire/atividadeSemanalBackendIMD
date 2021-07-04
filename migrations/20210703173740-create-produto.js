@@ -11,6 +11,15 @@ module.exports = {
       nome: {
         type: Sequelize.STRING
       },
+      descricao: {
+        type: Sequelize.STRING
+      },
+      preco: {
+        type: Sequelize.INTEGER
+      },
+      tag: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
