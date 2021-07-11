@@ -4,6 +4,8 @@ const rotaProduto = require('./rotas/produtos.rota')
 const app = express()
 app.use(express.json())
 
+app.use('/static', express.static('public'))
+
 app.use('/produtos', rotaProduto)
 
 app.get('/', (req, res) => {
@@ -11,5 +13,6 @@ app.get('/', (req, res) => {
 })
 
 app.listen(8080, () => {
+    console.log(`Iniciando no ambiente ${process.env.NODE_ENV}`)
     console.log('Servidor pronto na porta 8080')
 })

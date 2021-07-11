@@ -1,12 +1,12 @@
 const Ajv = require('ajv')
 const ajv = new Ajv()
-const addFormats = require("ajv-formats")
 const produtoSchema = require('../schemas/produto.schema')
-
-addFormats(ajv)
 
 function validarProduto(req, res, next) {
     const produto = req.body
+    if (produto.userId) {
+        produto.userId = Number(produto.userId)
+    }
     const validate = ajv.compile(produtoSchema)
     const valid = validate(produto)
     if (valid) {

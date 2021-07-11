@@ -6,6 +6,6 @@ module.exports = {
     preco: { type: "number" },
     tag: { type: "string" }
   },
-  required: ["nome", "preco"],
+  required: ["nome"],
   additionalProperties: true
 }
